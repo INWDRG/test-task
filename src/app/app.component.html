@@ -1,0 +1,31 @@
+<div class='main__container'>
+  <div class='main__content'>
+    <form class='filter__container' [formGroup]='form'>
+     <ul>
+      <li>
+       <div class='filter__el__container'>
+        <label>breed:</label>
+         <select name='must have something' formControlName='breed' (change)='makeRequest()'>
+          <option *ngFor='let element of breeds' [value]='element'>{{element}}</option>
+         </select>
+        </div>
+      </li>
+   
+      <li>
+       <div class='filter__el__container'>
+        <label>show:</label>
+         <select name='must have something' formControlName='show' (change)='display()'>
+          <option *ngFor='let element of shows' [value]='element'>{{element}}</option>
+         </select>
+        </div>
+      </li>
+    </ul>
+  </form>
+  <div class='images__container'>
+   <ul>
+    <li *ngFor='let element of displayData'><app-image [imageUrl]='element.url'></app-image></li>
+   </ul>
+  </div>
+ </div>
+</div>
+   
